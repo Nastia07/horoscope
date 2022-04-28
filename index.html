@@ -43,7 +43,7 @@
 
     <section id="form">
       <div class="form__wrap container">
-        <progress id="progress" value="20" max="100"></progress>
+        <progress id="progress" value="20" max="100" hidden></progress>
 
         <form action="#" class="form">
           <div class="form__step active">
@@ -53,9 +53,34 @@
               <input type="radio" id="female" name="gender" value="female">
               <label for="female">Женщина</label>
             </div>
-            <div class="input_group">
+            <div class="input_group in_row">
               <input type="radio" id="male" name="gender" value="male">
               <label for="male">Мужчина</label>
+            </div>
+
+            <button class="form__btn_next" type="button">
+              Далее
+            </button>
+          </div>
+
+          <div class="form__step">
+            <legend>В какое время суток Вы чувствуете себя наиболее комфортно?</legend>
+
+            <div class="input_group">
+              <input type="radio" id="morning" name="timeofday" value="morning">
+              <label for="morning">Утро</label>
+            </div>
+            <div class="input_group">
+              <input type="radio" id="night" name="timeofday" value="night">
+              <label for="night">Ночь</label>
+            </div>
+            <div class="input_group">
+              <input type="radio" id="evening" name="timeofday" value="evening">
+              <label for="evening">Вечер</label>
+            </div>
+            <div class="input_group">
+              <input type="radio" id="day" name="timeofday" value="day">
+              <label for="day">День</label>
             </div>
 
             <button class="form__btn_next" type="button">
