@@ -43,19 +43,21 @@
 
     <section id="form">
       <div class="form__wrap container">
-        <progress id="progress" value="20" max="100" hidden></progress>
+        <progress id="progress" value="16" max="100" class="form__progress" hidden></progress>
 
-        <form action="#" class="form">
+        <form action="#" class="form" onsubmit="return false">
           <div class="form__step active">
             <legend>Укажите свой пол:</legend>
 
-            <div class="input_group">
-              <input type="radio" id="female" name="gender" value="female">
-              <label for="female">Женщина</label>
-            </div>
-            <div class="input_group in_row">
-              <input type="radio" id="male" name="gender" value="male">
-              <label for="male">Мужчина</label>
+            <div class="row">
+              <div class="input_group">
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Женщина</label>
+              </div>
+              <div class="input_group in_row">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Мужчина</label>
+              </div>
             </div>
 
             <button class="form__btn_next" type="button">
@@ -129,10 +131,121 @@
               Далее
             </button>
           </div>
+
+          <div class="form__step">
+            <legend>Чувствуете ли Вы в последнее время, что вам никак не удается осуществить ваши планы?</legend>
+
+            <div class="input_group">
+              <input type="radio" id="plans1" name="plans" value="yes">
+              <label for="yes">Да</label>
+            </div>
+            <div class="input_group">
+              <input type="radio" id="plans2" name="plans" value="male">
+              <label for="sleeplessness2">Нет</label>
+            </div>
+            <div class="input_group">
+              <input type="radio" id="plans3" name="plans" value="male">
+              <label for="sleeplessness3">Иногда</label>
+            </div>
+
+            <button class="form__btn_next" type="button">
+              Далее
+            </button>
+          </div>
+
+          <div class="form__step">
+            <legend>Какой Вы видите свою жизнь через 5 лет?</legend>
+
+            <div class="input_group">
+              <input type="radio" id="future1" name="future" value="family">
+              <label for="future1">Брак, семья, дети, дом</label>
+            </div>
+            <div class="input_group">
+              <input type="radio" id="future2" name="future" value="traveling">
+              <label for="future2">Путешествия по миру</label>
+            </div>
+            <div class="input_group">
+              <input type="radio" id="future3" name="future" value="career">
+              <label for="future3">Успешная карьера</label>
+            </div>
+            <div class="input_group">
+              <input type="radio" id="future4" name="future" value="evening">
+              <label for="future4">Всё вместе</label>
+            </div>
+
+            <button class="form__btn_next" type="button">
+              Далее
+            </button>
+          </div>
+
+          <div class="form__step">
+            <legend>Какой Вы видите свою жизнь через 5 лет?</legend>
+
+            <select id="selectDay" class="form__select">
+              <option value="0">День</option>
+            </select>
+
+            <select id="selectMonth" class="form__select">
+              <option value="0">Месяць</option>
+            </select>
+
+            <select id="selectYear" class="form__select">
+              <option value="0">Год</option>
+            </select>
+
+            <p id="form__alert" class="form__alert" hidden>Пожалуйста, выберите ответ</p>
+
+            <div id="zodiac"></div>
+
+            <button class="form__btn_next" type="submit">
+              Далее
+            </button>
+          </div>
         </form>
       </div>
     </section>
+
+    <section id="result">
+      <div class="result__wrap container">
+        <div id="result__progress_wrap"></div>
+        <ul class="result__list">
+          <li class="result__list_item" hidden>
+            Анализ введенных данных . . . . . . . Выполнено!
+          </li>
+          <li class="result__list_item" hidden>
+            Коррекция астрологического знака . . . . . . . Выполнено!
+          </li>
+          <li class="result__list_item" hidden>
+            Расчет вариаций ответов . . . . . . . Выполнено!
+          </li>
+          <li class="result__list_item" hidden>
+            Генерация предсказания . . . . . . . Выполнено!
+          </li>
+          <li class="result__list_item" hidden>
+            Сохранение результата . . . . . . . Выполнено!
+          </li>
+          <li class="result__list_item" hidden>
+            Поиск свободного оператора . . . . . . . Выполнено!
+          </li>
+          <li class="result__list_item" hidden>
+            Начала озвучки и записи аудио-сообщения . . . . . . . Выполнено!
+          </li>
+          <li class="result__list_item" hidden>
+            Идёт запись!
+          </li>
+          <li class="result__list_item" hidden>
+            Готово!
+          </li>
+        </ul>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="container">
+      <a href="#" class="copyright">2020 © HOROSCOP PERSONAL</a>
+    </div>
+  </footer>
   <script src="./script.js"></script>
 </body>
 
