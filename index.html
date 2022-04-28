@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гороскоп</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__wrap container">
+      <h1 class="title">Новый гороскоп на 2021 год!</h1>
+      <span>Узнайте, что Вас ждёт.</span>
+    </div>
+  </header>
+
+  <main>
+    <section id="info">
+      <div class="info__wrap container">
+        <div class="info__images">
+          <img src="./img/hero.png" alt="Woman">
+          <img src="./img/circle.png" alt="Zodiacal circle" class="circle">
+        </div>
+
+        <div class="title">
+          Узнайте, как 2021 год изменит жизнь каждого из нас!
+        </div>
+
+        <p>
+          К сожалению, 2020 год принес нам немало неприятностей, даже откровенных проблем и несчастий. Не смотря на это,
+          3 знака зодиака очень скоро обретут долгожданное счастье! 2021 год затронет своими потрясениями каждого из
+          нас.
+        </p>
+      </div>
+    </section>
+
+    <section id="form">
+      <div class="form__wrap container">
+        <progress id="progress" value="20" max="100"></progress>
+
+        <form action="#" class="form">
+          <div class="form__step active">
+            <legend>Укажите свой пол:</legend>
+
+            <div class="input_group">
+              <input type="radio" id="female" name="gender" value="female">
+              <label for="female">Женщина</label>
+            </div>
+            <div class="input_group">
+              <input type="radio" id="male" name="gender" value="male">
+              <label for="male">Мужчина</label>
+            </div>
+
+            <button class="form__btn_next" type="button">
+              Далее
+            </button>
+          </div>
+
+          <div class="form__step">
+            <legend>Подскажите, мучает ли Вас бессонница последнее время?</legend>
+
+            <div class="input_group">
+              <input type="radio" id="sleeplessness1" name="sleeplessness" value="yes">
+              <label for="yes">Да</label>
+            </div>
+            <div class="input_group">
+              <input type="radio" id="sleeplessness2" name="sleeplessness" value="male">
+              <label for="sleeplessness2">Нет</label>
+            </div>
+            <div class="input_group">
+              <input type="radio" id="sleeplessness3" name="sleeplessness" value="male">
+              <label for="sleeplessness3">Иногда</label>
+            </div>
+
+            <button class="form__btn_next" type="button">
+              Далее
+            </button>
+          </div>
+
+          <div class="form__step">
+            <legend>Подскажите, мучает ли Вас бессонница последнее время?</legend>
+
+            <div class="input_group">
+              <input type="radio" id="success1" name="success" value="yes">
+              <label for="yes">Да</label>
+            </div>
+            <div class="input_group">
+              <input type="radio" id="success2" name="success" value="male">
+              <label for="sleeplessness2">Нет</label>
+            </div>
+            <div class="input_group">
+              <input type="radio" id="success2" name="success" value="male">
+              <label for="sleeplessness3">Иногда</label>
+            </div>
+
+            <button class="form__btn_next" type="button">
+              Далее
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="./script.js"></script>
+</body>
+
+</html>
