@@ -1,13 +1,24 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-  const nextButton = document.querySelectorAll(".form__btn_next");
   const infoSection = document.getElementById("info");
-  const progressBar = document.getElementById("progress");
+
+  const formProgressBar = document.getElementById("form__progress");
   const formSteps = document.querySelectorAll(".form__step");
+  const nextButton = document.querySelectorAll(".form__btn_next");
+  const formAlert = document.getElementById("form__alert");
+  const zodiacImage = document.getElementById("zodiac");
   const checkboxs = document.querySelectorAll("input[type=radio]");
   const selectors = document.querySelectorAll("select");
 
-  const formAlert = document.getElementById("form__alert");
-  const zodiacImage = document.getElementById("zodiac");
+  const processing = document.getElementById("processing");
+  const processingProgressBar = document.getElementById(
+    "processing__progress_wrap"
+  );
+  const processingItem = document.querySelectorAll(".processing__list_item");
+
+  const result = document.getElementById("result");
+  const resultTable = document.getElementById("result__table");
+  const resultCallBnt = document.querySelector(".result__call");
+  const loadingResult = document.getElementById("loading_result");
 
   const dayArray = [...Array(32).keys()].slice(1);
   const monthArray = [...Array(13).keys()].slice(1);
@@ -17,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       .map((year, index) => index + 1990),
   ];
 
-  const setDate = (array, parent) => {
+  const setDateSelect = (array, parent) => {
     array.forEach((element) =>
       parent.insertAdjacentHTML(
         "beforeend",
@@ -26,9 +37,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     );
   };
 
-  setDate(dayArray, selectors[0]);
-  setDate(monthArray, selectors[1]);
-  setDate(yearArray, selectors[2]);
+  setDateSelect(dayArray, selectors[0]);
+  setDateSelect(monthArray, selectors[1]);
+  setDateSelect(yearArray, selectors[2]);
 
   const showButtonNext = () => {
     checkboxs.forEach((checkbox) => {
@@ -63,68 +74,98 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   showButtonNext();
 
-  const updateFormSteps = () => {
-    formSteps.forEach((formStep) => {
-      formStep.classList.contains("active") &&
-        formStep.classList.remove("active");
-    });
-    formSteps[formStepsNum].classList.add("active");
-  };
+  const nextFormStep = () => {
+    let formStepsNum = 0;
 
-  const updateProgressbar = () => {
-    progressBar.value += 16;
-  };
-
-  const hiddenInfoShowProgress = () => {
-    infoSection.hidden = true;
-    progressBar.hidden = false;
-  };
-
-  let formStepsNum = 0;
-
-  nextButton.forEach((button, index) => {
-    if (index + 1 !== nextButton.length) {
-      button.addEventListener("click", () => {
-        formStepsNum++;
-        hiddenInfoShowProgress();
-        updateFormSteps();
-        updateProgressbar();
-      });
-    } else {
-      button.addEventListener("click", () => {
-        let formSection = button.closest("#form");
-        formSection.hidden = true;
-        progressBar.hidden = true;
-
-        showResult();
-      });
-    }
-  });
-
-  const showResult = () => {
-    const result = document.getElementById("result");
-    const resultProgressBar = document.getElementById("result__progress_wrap");
-    const resultItem = document.querySelectorAll(".result__list_item");
-    const timer = (ms) => new Promise((res) => setTimeout(res, ms));
-    let width = 0;
-
-    result.hidden = false;
-
-    const loadingProgress = setInterval(() => {
-      if (width >= 100) {
-        clearInterval(loadingProgress);
+    nextButton.forEach((button, index) => {
+      if (index + 1 !== nextButton.length) {
+        button.addEventListener("click", () => {
+          formStepsNum++;
+          hiddenInfoShowProgress();
+          updateFormSteps();
+          updateProgressbar();
+        });
       } else {
-        width++;
-        resultProgressBar.innerHTML = `<div class="result__progress" style="width: ${width}%">${width}%</div>`;
-      }
-    }, 20);
+        button.addEventListener("click", () => {
+          let formSection = button.closest("#form");
+          formSection.hidden = true;
+          formProgressBar.hidden = true;
 
+          showProcessing();
+          hideProcessing();
+        });
+      }
+      const updateFormSteps = () => {
+        formSteps.forEach((formStep) => {
+          formStep.classList.contains("active") &&
+            formStep.classList.remove("active");
+        });
+        formSteps[formStepsNum].classList.add("active");
+      };
+
+      const updateProgressbar = () => {
+        formProgressBar.value += 12.5;
+      };
+
+      const hiddenInfoShowProgress = () => {
+        infoSection.hidden = true;
+        formProgressBar.hidden = false;
+      };
+    });
+  };
+
+  nextFormStep();
+
+  const showProcessing = () => {
+    processing.hidden = false;
+
+    let width = 0;
+    const timer = (ms) => new Promise((res) => setTimeout(res, ms));
+
+    function loadingProgress() {
+      setInterval(() => {
+        if (width >= 100) {
+          clearInterval(loadingProgress);
+        } else {
+          width++;
+          processingProgressBar.innerHTML = `<div class="processing__progress" style="width: ${width}%">${width}%</div>`;
+        }
+      }, 20);
+    }
     async function loadingContent() {
-      for (let i = 0; i < resultItem.length; i++) {
-        resultItem[i].hidden = false;
+      for (let i = 0; i < processingItem.length; i++) {
+        processingItem[i].hidden = false;
         await timer(300);
       }
     }
+    loadingProgress();
     loadingContent();
   };
+
+  const hideProcessing = () => {
+    setTimeout(() => {
+      processing.hidden = true;
+      result.hidden = false;
+    }, 3500);
+  };
+
+  resultCallBnt.addEventListener("click", () => {
+    loadingResult.hidden = false;
+    fetch("https://swapi.dev/api/people/1/")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        for (let key in data) {
+          loadingResult.hidden = true;
+          resultTable.insertAdjacentHTML(
+            "beforeend",
+            `<tr>
+          <td>${key}</td>
+          <td>${data[key]}</td>
+        </tr>`
+          );
+        }
+      });
+  });
 });

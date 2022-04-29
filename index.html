@@ -2,15 +2,15 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Гороскоп</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
@@ -25,8 +25,8 @@
     <section id="info">
       <div class="info__wrap container">
         <div class="info__images">
-          <img src="./img/hero.png" alt="Woman">
-          <img src="./img/circle.png" alt="Zodiacal circle" class="circle">
+          <img src="./img/hero.png" alt="Woman" />
+          <img src="./img/circle.png" alt="Zodiacal circle" class="circle" />
         </div>
 
         <div class="title">
@@ -34,16 +34,17 @@
         </div>
 
         <p>
-          К сожалению, 2020 год принес нам немало неприятностей, даже откровенных проблем и несчастий. Не смотря на это,
-          3 знака зодиака очень скоро обретут долгожданное счастье! 2021 год затронет своими потрясениями каждого из
-          нас.
+          К сожалению, 2020 год принес нам немало неприятностей, даже
+          откровенных проблем и несчастий. Не смотря на это, 3 знака зодиака
+          очень скоро обретут долгожданное счастье! 2021 год затронет своими
+          потрясениями каждого из нас.
         </p>
       </div>
     </section>
 
     <section id="form">
       <div class="form__wrap container">
-        <progress id="progress" value="16" max="100" class="form__progress" hidden></progress>
+        <progress id="form__progress" value="12,5" max="100" class="form__progress" hidden></progress>
 
         <form action="#" class="form" onsubmit="return false">
           <div class="form__step active">
@@ -51,131 +52,128 @@
 
             <div class="row">
               <div class="input_group">
-                <input type="radio" id="female" name="gender" value="female">
+                <input type="radio" id="female" name="gender" value="female" />
                 <label for="female">Женщина</label>
               </div>
               <div class="input_group in_row">
-                <input type="radio" id="male" name="gender" value="male">
+                <input type="radio" id="male" name="gender" value="male" />
                 <label for="male">Мужчина</label>
               </div>
             </div>
 
-            <button class="form__btn_next" type="button">
-              Далее
-            </button>
+            <button class="form__btn_next" type="button">Далее</button>
           </div>
 
           <div class="form__step">
-            <legend>В какое время суток Вы чувствуете себя наиболее комфортно?</legend>
+            <legend>
+              В какое время суток Вы чувствуете себя наиболее комфортно?
+            </legend>
 
             <div class="input_group">
-              <input type="radio" id="morning" name="timeofday" value="morning">
+              <input type="radio" id="morning" name="timeofday" value="morning" />
               <label for="morning">Утро</label>
             </div>
             <div class="input_group">
-              <input type="radio" id="night" name="timeofday" value="night">
+              <input type="radio" id="night" name="timeofday" value="night" />
               <label for="night">Ночь</label>
             </div>
             <div class="input_group">
-              <input type="radio" id="evening" name="timeofday" value="evening">
+              <input type="radio" id="evening" name="timeofday" value="evening" />
               <label for="evening">Вечер</label>
             </div>
             <div class="input_group">
-              <input type="radio" id="day" name="timeofday" value="day">
+              <input type="radio" id="day" name="timeofday" value="day" />
               <label for="day">День</label>
             </div>
 
-            <button class="form__btn_next" type="button">
-              Далее
-            </button>
+            <button class="form__btn_next" type="button">Далее</button>
           </div>
 
           <div class="form__step">
-            <legend>Подскажите, мучает ли Вас бессонница последнее время?</legend>
+            <legend>
+              Подскажите, мучает ли Вас бессонница последнее время?
+            </legend>
 
             <div class="input_group">
-              <input type="radio" id="sleeplessness1" name="sleeplessness" value="yes">
-              <label for="yes">Да</label>
+              <input type="radio" id="sleeplessness1" name="sleeplessness" value="yes" />
+              <label for="sleeplessness1">Да</label>
             </div>
             <div class="input_group">
-              <input type="radio" id="sleeplessness2" name="sleeplessness" value="male">
+              <input type="radio" id="sleeplessness2" name="sleeplessness" value="male" />
               <label for="sleeplessness2">Нет</label>
             </div>
             <div class="input_group">
-              <input type="radio" id="sleeplessness3" name="sleeplessness" value="male">
+              <input type="radio" id="sleeplessness3" name="sleeplessness" value="male" />
               <label for="sleeplessness3">Иногда</label>
             </div>
 
-            <button class="form__btn_next" type="button">
-              Далее
-            </button>
+            <button class="form__btn_next" type="button">Далее</button>
           </div>
 
           <div class="form__step">
-            <legend>Подскажите, мучает ли Вас бессонница последнее время?</legend>
+            <legend>
+              Подскажите, мучает ли Вас бессонница последнее время?
+            </legend>
 
             <div class="input_group">
-              <input type="radio" id="success1" name="success" value="yes">
-              <label for="yes">Да</label>
+              <input type="radio" id="success1" name="success" value="yes" />
+              <label for="success1">Да</label>
             </div>
             <div class="input_group">
-              <input type="radio" id="success2" name="success" value="male">
-              <label for="sleeplessness2">Нет</label>
+              <input type="radio" id="success2" name="success" value="male" />
+              <label for="success2">Нет</label>
             </div>
             <div class="input_group">
-              <input type="radio" id="success2" name="success" value="male">
-              <label for="sleeplessness3">Иногда</label>
+              <input type="radio" id="success3" name="success" value="male" />
+              <label for="success3">Иногда</label>
             </div>
 
-            <button class="form__btn_next" type="button">
-              Далее
-            </button>
+            <button class="form__btn_next" type="button">Далее</button>
           </div>
 
           <div class="form__step">
-            <legend>Чувствуете ли Вы в последнее время, что вам никак не удается осуществить ваши планы?</legend>
+            <legend>
+              Чувствуете ли Вы в последнее время, что вам никак не удается
+              осуществить ваши планы?
+            </legend>
 
             <div class="input_group">
-              <input type="radio" id="plans1" name="plans" value="yes">
-              <label for="yes">Да</label>
+              <input type="radio" id="plans1" name="plans" value="yes" />
+              <label for="plans1">Да</label>
             </div>
             <div class="input_group">
-              <input type="radio" id="plans2" name="plans" value="male">
-              <label for="sleeplessness2">Нет</label>
+              <input type="radio" id="plans2" name="plans" value="male" />
+              <label for="plans2">Нет</label>
             </div>
             <div class="input_group">
-              <input type="radio" id="plans3" name="plans" value="male">
-              <label for="sleeplessness3">Иногда</label>
+              <input type="radio" id="plans3" name="plans" value="male" />
+              <label for="plans3">Иногда</label>
             </div>
 
-            <button class="form__btn_next" type="button">
-              Далее
-            </button>
+            <button class="form__btn_next" type="button">Далее</button>
           </div>
 
           <div class="form__step">
             <legend>Какой Вы видите свою жизнь через 5 лет?</legend>
 
             <div class="input_group">
-              <input type="radio" id="future1" name="future" value="family">
+              <input type="radio" id="future1" name="future" value="family" />
               <label for="future1">Брак, семья, дети, дом</label>
             </div>
             <div class="input_group">
-              <input type="radio" id="future2" name="future" value="traveling">
+              <input type="radio" id="future2" name="future" value="traveling" />
               <label for="future2">Путешествия по миру</label>
             </div>
             <div class="input_group">
-              <input type="radio" id="future3" name="future" value="career">
+              <input type="radio" id="future3" name="future" value="career" />
               <label for="future3">Успешная карьера</label>
             </div>
             <div class="input_group">
-              <input type="radio" id="future4" name="future" value="evening">
+              <input type="radio" id="future4" name="future" value="evening" />
               <label for="future4">Всё вместе</label>
             </div>
 
-            <button class="form__btn_next" type="button">
-              Далее
-            </button>
+            <button class="form__btn_next" type="button">Далее</button>
           </div>
 
           <div class="form__step">
@@ -193,50 +191,86 @@
               <option value="0">Год</option>
             </select>
 
-            <p id="form__alert" class="form__alert" hidden>Пожалуйста, выберите ответ</p>
+            <p id="form__alert" class="form__alert" hidden>
+              Пожалуйста, выберите ответ
+            </p>
 
             <div id="zodiac"></div>
 
-            <button class="form__btn_next" type="submit">
-              Далее
-            </button>
+            <button class="form__btn_next" type="submit">Далее</button>
           </div>
         </form>
       </div>
     </section>
 
-    <section id="result">
-      <div class="result__wrap container">
-        <div id="result__progress_wrap"></div>
-        <ul class="result__list">
-          <li class="result__list_item" hidden>
-            Анализ введенных данных . . . . . . . Выполнено!
+    <section id="processing">
+      <div class="processing__wrap container">
+        <div id="processing__progress_wrap"></div>
+        <ul class="processing__list">
+          <li class="processing__list_item" hidden>
+            Анализ введенных данных . . . . . . . <span>Выполнено!</span>
           </li>
-          <li class="result__list_item" hidden>
-            Коррекция астрологического знака . . . . . . . Выполнено!
+          <li class="processing__list_item" hidden>
+            Коррекция астрологического знака . . . . . . .
+            <span>Выполнено!</span>
           </li>
-          <li class="result__list_item" hidden>
-            Расчет вариаций ответов . . . . . . . Выполнено!
+          <li class="processing__list_item" hidden>
+            Расчет вариаций ответов . . . . . . . <span>Выполнено!</span>
           </li>
-          <li class="result__list_item" hidden>
-            Генерация предсказания . . . . . . . Выполнено!
+          <li class="processing__list_item" hidden>
+            Генерация предсказания . . . . . . . <span>Выполнено!</span>
           </li>
-          <li class="result__list_item" hidden>
-            Сохранение результата . . . . . . . Выполнено!
+          <li class="processing__list_item" hidden>
+            Сохранение результата . . . . . . . <span>Выполнено!</span>
           </li>
-          <li class="result__list_item" hidden>
-            Поиск свободного оператора . . . . . . . Выполнено!
+          <li class="processing__list_item" hidden>
+            Поиск свободного оператора . . . . . . . <span>Выполнено!</span>
           </li>
-          <li class="result__list_item" hidden>
-            Начала озвучки и записи аудио-сообщения . . . . . . . Выполнено!
+          <li class="processing__list_item" hidden>
+            Начала озвучки и записи аудио-сообщения. . . . .
+            <span>Выполнено!</span>
           </li>
-          <li class="result__list_item" hidden>
-            Идёт запись!
-          </li>
-          <li class="result__list_item" hidden>
-            Готово!
-          </li>
+          <li class="processing__list_item red" hidden>Идёт запись!</li>
+          <li class="processing__list_item grey" hidden>Готово!</li>
         </ul>
+      </div>
+    </section>
+
+    <section id="result" hidden>
+      <div class="result__wrap container">
+        <p>Спасибо за Ваши ответы!</p>
+
+        <p class="title">
+          Поздравляем! Прослушать свой персональный гороскоп возможно уже
+          сейчас!
+        </p>
+
+        <div class="result__text">
+          <p class="big">2021 год Вас ошарашит!</p>
+          <p>
+            Вас ждёт то, чего Вы никак не ожидали. Первые известия Вы получите
+            совсем скоро, возможно это 17-18 ноября!
+          </p>
+          <p>
+            Что бы прослушать аудио-сообщение, необходимо нажать на кнопку
+            ниже и позвонить со своего мобильного телефона. Позвоните и
+            Прослушайте очень серьезную информацию!
+          </p>
+        </div>
+
+        <button type="button" class="result__call">
+          <svg width="28" height="26" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M26.785 19.3459L22.0058 16.805C20.4127 15.9491 20.3587 16.5108 18.6846 18.276C18.2796 18.704 17.5236 19.8273 16.6325 19.6133C14.7694 19.1586 11.2863 16.4573 10.1522 15.2269C9.61217 14.6385 7.29005 11.8302 7.26305 10.9208C7.20905 9.52997 10.2872 8.83456 9.28815 6.18667L7.15504 1.45257C5.15694 -3.09431 -0.432344 4.1807 0.0266796 7.57748C1.21474 15.9491 16.0385 29.4827 24.3009 25.0161C26.137 23.9997 28.6211 20.4425 26.785 19.3459Z"
+              fill="white" />
+          </svg>
+
+          <span>Звонить и слушать</span>
+        </button>
+
+        <span id="loading_result" hidden>Загрузка...</span>
+
+        <table id="result__table" class="result__table"></table>
       </div>
     </section>
   </main>
